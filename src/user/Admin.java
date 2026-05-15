@@ -4,38 +4,30 @@
  */
 
 package user;
+
+import matkul.Material;
+
 public class Admin extends User {
 
-    // Constructor
-    public Admin(String username, String password) {
-        super(username, password);
+    public Admin(int userId, String username, String password) {
+        super(userId, username, password);
     }
 
-    // Method untuk mengelola course
-    public void manageCourses(String courseName) {
-        System.out.println("Admin sedang mengelola course: " + courseName);
+    public void manageCourses() {
+        System.out.println("Admin mengelola course.");
     }
 
-    // Method upload materi
-    public void uploadMaterial(String materialTitle) {
-        System.out.println("Admin mengupload materi: " + materialTitle);
+    public void assignTier() {
+        System.out.println("Admin menentukan tier akses.");
     }
 
-    // Method menentukan level akses
-    public void assignTier(String username, String tier) {
-        System.out.println("Memberikan akses " + tier + " kepada user " + username);
+    public void validateSubmission(Material material) {
+        material.setStatus("Validated");
+        System.out.println("Material " + material.getTitle() + " berhasil divalidasi.");
     }
 
-    // Method validasi submission dari senior
-    public boolean validateSubmission(String materialTitle) {
-        System.out.println("Memvalidasi submission materi: " + materialTitle);
-
-        // Simulasi validasi
-        return true;
-    }
-
-    // Method publish materi
-    public void publishMaterial(String materialTitle) {
-        System.out.println("Materi berhasil dipublish: " + materialTitle);
+    public void publishMaterial(Material material) {
+        material.setStatus("Published");
+        System.out.println("Material "+ material.getTitle() + " berhasil dipublish.");
     }
 }
