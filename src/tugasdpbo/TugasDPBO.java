@@ -4,18 +4,21 @@
  */
 package tugasdpbo;
 
-/**
- *
- * @author Girls
- */
+import user.Admin;
+import user.Authentication;
+
 public class TugasDPBO {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        
+
+        Admin admin = new Admin(1,"admin01","12345");
+        Authentication auth = new Authentication();
+
+        auth.displayLogin();
+        boolean status = auth.validateAccount(admin,"admin01","12345");
+
+        if (status) {
+            admin.login();
+        }
     }
-    
 }
