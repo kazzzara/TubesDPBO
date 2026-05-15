@@ -3,8 +3,7 @@ package matkul;
 /**
  * @author Mael
  */
-
-public class Material { 
+public abstract class Material { 
     private int materialId; 
     private String title; 
     private String content; 
@@ -12,7 +11,6 @@ public class Material {
     private double urgencyPercentage; 
     private String difficultyLevel;
 
-   
     public Material(int materialId, String title, String content, String status) {
         this.materialId = materialId;
         this.title = title;
@@ -20,10 +18,12 @@ public class Material {
         this.status = status;
     }
 
+    public abstract void tampilkanKonten();
 
     public int getMaterialId() { 
         return materialId; 
     }
+    
     public void setMaterialId(int materialId) { 
         this.materialId = materialId; 
     }
@@ -31,6 +31,7 @@ public class Material {
     public String getTitle() { 
         return title; 
     }
+    
     public void setTitle(String title) { 
         this.title = title; 
     }
@@ -38,6 +39,7 @@ public class Material {
     public String getContent() { 
         return content; 
     }
+    
     public void setContent(String content) { 
         this.content = content; 
     }
@@ -49,13 +51,13 @@ public class Material {
     public void setStatus(String status) { 
         this.status = status; 
     } 
-    
 
     public double getUrgencyPercentage() { 
         return urgencyPercentage; 
     }
+    
     public void setUrgencyPercentage(double urgencyPercentage) { 
-        this.urgencyPercentage = urgencyPercentage;
+        this.urgencyPercentage = urgencyPercentage; 
     }
 
     public String getDifficultyLevel() { 
