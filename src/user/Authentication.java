@@ -9,8 +9,15 @@ package user;
  * @author Girls
  */
 public class Authentication extends User{
-    public void validateAccount(){
-        
+    
+    public boolean validateAccount(User userId,String username,String password) {
+        if (user.getUsername().equals(username)
+            && user.getPassword().equals(password)) {
+                    System.out.println("Login berhasil.");
+                return true;
+            }
+        System.out.println("Username atau password salah.");
+        return false;
     }
     
     public void displayLogin(){
