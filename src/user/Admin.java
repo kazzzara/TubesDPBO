@@ -23,11 +23,11 @@ public class Admin extends User {
 
     public void validateSubmission(Material material) {
         material.setStatus("Validated");
-        System.out.println("Material " + material.getTitle() + " berhasil divalidasi.");
+            System.out.println("Material " + material.getTitle() + " berhasil divalidasi.");
     }
 
     public void publishMaterial(Material material) {
         material.setStatus("Published");
-        System.out.println("Material " + material.getTitle() + " berhasil dipublish.");
+            System.out.println("Material " + material.getTitle() + " berhasil dipublish.");
     }
 }
